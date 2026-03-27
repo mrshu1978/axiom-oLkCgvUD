@@ -148,7 +148,7 @@ export default function TaskFormModal({ task, onClose }) {
                     onClick={() => setPriority(p.value)}
                     className={`flex-1 py-2 rounded-xl border-2 text-sm font-medium transition-colors ${
                       priority === p.value
-                        ? `${p.color} bg-${p.color.split('-')[1]}/10 text-white`
+                        ? `${p.color} ${p.value === 'high' ? 'bg-[#EF4444]/10' : p.value === 'medium' ? 'bg-[#F59E0B]/10' : 'bg-[#10B981]/10'} text-white`
                         : 'border-[#7C3AED]/30 text-[#9CA3AF] hover:border-[#7C3AED]/50'
                     }`}
                   >
