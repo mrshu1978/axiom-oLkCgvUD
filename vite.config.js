@@ -2,6 +2,8 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
+const base = process.env.BASE_URL || '/';
+
 export default defineConfig({
   plugins: [
     react(),
@@ -16,8 +18,8 @@ export default defineConfig({
         background_color: '#0A0A12',
         display: 'standalone',
         orientation: 'portrait',
-        scope: '/',
-        start_url: '/',
+        scope: base,
+        start_url: base,
         icons: [
           {
             src: 'icons/icon-192.png',
@@ -38,5 +40,5 @@ export default defineConfig({
       },
     })
   ],
-  base: process.env.BASE_URL || '/',
+  base,
 });
